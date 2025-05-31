@@ -1,5 +1,5 @@
 import EditCourse from "@/pages/admin/course/EditCourse";
-import CreateLecture from "@/pages/admin/lecture/createLecture";
+import CreateLecture from "@/pages/admin/lecture/CreateLecture";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const COURSE_API = `${import.meta.env.VITE_API_BASE_URL}/course/`;

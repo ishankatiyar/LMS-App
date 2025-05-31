@@ -51,21 +51,18 @@ const CourseProgress = () => {
   const { courseDetails, progress, completed } = data.data;
   const { courseTitle } = courseDetails;
 
-  // initialze the first lecture is not exist
   const initialLecture =
     currentLecture || (courseDetails.lectures && courseDetails.lectures[0]);
 
   const isLectureCompleted = (lectureId) => {
     return progress.some((prog) => prog.lectureId === lectureId && prog.viewed);
   };
-  // It iterates through the progress array and returns true if it finds an element where the lecture ID matches and the lecture is marked as viewed; otherwise, it returns false.
 
   const handleLectureProgress = async (lectureId) => {
     await updateLectureProgress({ courseId, lectureId });
     refetch();
   };
 
-  // Handle select a specific lecture to watch
   const handleSelectLecture = (lecture) => {
     setCurrentLecture(lecture);
     handleLectureProgress(lecture._id);

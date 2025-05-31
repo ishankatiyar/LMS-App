@@ -36,7 +36,6 @@ export const searchCourse = async (req,res) => {
       const {query = "", categories = [], sortByPrice =""} = req.query;
       console.log(categories);
       
-      // create search query
       const searchCriteria = {
           isPublished:true,
           $or:[
@@ -46,12 +45,10 @@ export const searchCourse = async (req,res) => {
           ]
       }
 
-      // if categories selected
       if(categories.length > 0) {
           searchCriteria.category = {$in: categories};
       }
 
-      // define sorting order
       const sortOptions = {};
       if(sortByPrice === "low"){
           sortOptions.coursePrice = 1;//sort by price in ascending

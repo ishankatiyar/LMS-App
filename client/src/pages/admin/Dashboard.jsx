@@ -13,10 +13,13 @@ const Dashboard = () => {
   //
   const {purchasedCourse} = data || [];
 
-  const courseData = purchasedCourse.map((course)=> ({
-    name:course.courseId.courseTitle,
-    price:course.courseId.coursePrice
-  }))
+ const courseData = purchasedCourse
+  .filter(course => course.courseId) 
+  .map((course) => ({
+    name: course.courseId.courseTitle,
+    price: course.courseId.coursePrice
+  }));
+
 
   const totalRevenue = purchasedCourse.reduce((acc,element) => acc+(element.amount || 0), 0);
 
@@ -64,9 +67,9 @@ const Dashboard = () => {
               <Line
                 type="monotone"
                 dataKey="price"
-                stroke="#4a90e2" // Changed color to a different shade of blue
+                stroke="#4a90e2" 
                 strokeWidth={3}
-                dot={{ stroke: "#4a90e2", strokeWidth: 2 }} // Same color for the dot
+                dot={{ stroke: "#4a90e2", strokeWidth: 2 }} 
               />
             </LineChart>
           </ResponsiveContainer>

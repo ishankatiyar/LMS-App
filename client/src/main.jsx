@@ -18,25 +18,9 @@ createRoot(document.getElementById("root")).render(
     <Provider store={appStore}>
       <Custom>
         <App />
-        <Toaster /> {/* Enables toast notifications (pop-up messages). */}
+        <Toaster /> 
       </Custom>
     </Provider>
   </StrictMode>
 );
 
-// Instead of passing data manually between components, Redux stores it in one place.
-
-// Redux is a state management tool (stores and manages app data).
-// Provider connects Redux to React, so components can access global state.
-
-{
-  /* <Provider store={appStore}>
-📌 What it does:
-
-Wraps the entire app with Redux Provider.
-Makes Redux data available to all components inside App.
-✅ Example Usage:
-
-If a user logs in, their details are stored in Redux.
-Other components (e.g., Navbar) can access the user's name. */
-}

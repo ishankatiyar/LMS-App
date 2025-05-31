@@ -2,7 +2,7 @@ import EditCourse from "@/pages/admin/course/EditCourse";
 import CreateLecture from "@/pages/admin/lecture/createLecture";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const COURSE_API = "http://localhost:8080/api/v1/course";
+const COURSE_API = `${import.meta.env.VITE_API_BASE_URL}/course/`;
 
 export const courseApi = createApi({
   reducerPath: "courseApi",

@@ -85,7 +85,7 @@ const Profile = () => {
               Name:
               <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
                 {" "}
-                {user.name}{" "}
+                {user?.name}{" "}
               </span>
             </h1>
           </div>

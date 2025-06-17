@@ -16,7 +16,7 @@ export const authApi = createApi({
         url: "register",
         method: "POST",
         body: inputData,
-        headers: { "Content-Type": "application/json" }, // ✅ Ensure correct headers
+        headers: { "Content-Type": "application/json" }, 
       }),
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {

@@ -18,7 +18,7 @@ const Dashboard = () => {
   .map((course) => ({
     name: course.courseId.courseTitle,
     price: course.courseId.coursePrice
-  }));
+  })); // Transforming data for the chart
 
 
   const totalRevenue = purchasedCourse.reduce((acc,element) => acc+(element.amount || 0), 0);

@@ -15,8 +15,8 @@ export const createCheckoutSession = async (req, res) => {
     const course = await Course.findById(courseId);
     if (!course) return res.status(404).json({ message: "Course not found!" });
 
-    console.log("I came  from here",course.coursePrice);
-    course.coursePrice = 4000; 
+    console.log("I came from here",course.coursePrice);
+    // course.coursePrice = 4000; 
 
     // Create a new course purchase record
     const newPurchase = new CoursePurchase({

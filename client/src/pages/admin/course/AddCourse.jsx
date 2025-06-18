@@ -100,10 +100,6 @@ const AddCourse = () => {
           </Button>
         </div>
 
-        <div>
-          <Label>Title</Label>
-          <Input type="text" name="courseTitle" placeholder="Naam Jaap" />
-        </div>
       </div>
     </div>
   );
